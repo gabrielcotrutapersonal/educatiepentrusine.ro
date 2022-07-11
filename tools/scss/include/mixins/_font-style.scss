@@ -1,0 +1,6 @@
+@mixin main-font($size: false, $weight: false, $lh: false) {
+    font-family: 'Arima', sans-serif;   
+    @if $size { font-size: $size; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
