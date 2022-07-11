@@ -14,10 +14,11 @@ body {
   align-items: center;
   justify-content: center;
   height: calc(50% + 50px);
+  min-height: 400px;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0% 100%);
   background-color: black;
 }
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 767px) {
   .header {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0% 100%);
   }
@@ -49,6 +50,7 @@ body {
 .footer {
   display: flex;
   justify-content: center;
+  min-height: 100px;
   padding-top: 30px;
 }
 .footer a {
