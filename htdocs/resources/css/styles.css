@@ -51,9 +51,12 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100px;
-  padding-top: 30px;
+  padding: 30px 0;
 }
-.footer a {
+.footer .contact-info-container a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
   font-family: "Arima", sans-serif;
   font-size: 32px;
   font-weight: 300;
@@ -61,7 +64,24 @@ body {
   text-decoration: none;
 }
 @media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
-  .footer a {
-    font-size: 24px;
+  .footer .contact-info-container a {
+    font-size: 18px;
   }
+}
+.footer .contact-info-container a .icon {
+  margin-right: 10px;
+  width: 48px;
+  height: 48px;
+}
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  .footer .contact-info-container a .icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+.footer .contact-info-container a .icon.email {
+  background: url(../img/icon-email.svg) no-repeat center center;
+}
+.footer .contact-info-container a .icon.facebook {
+  background: url(../img/icon-facebook.svg) no-repeat center center;
 }/*# sourceMappingURL=styles.css.map */
