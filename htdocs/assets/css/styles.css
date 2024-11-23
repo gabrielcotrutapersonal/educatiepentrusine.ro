@@ -3,7 +3,7 @@ body {
   margin: 0;
   height: 100%;
   background-color: #9237CB;
-  font-family: "Arima", sans-serif;
+  font-family: 'Arima', sans-serif;
   font-size: 32px;
   font-weight: 300;
 }
@@ -18,29 +18,34 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0% 100%);
   background-color: black;
 }
+
 @media (min-width: 320px) and (max-width: 767px) {
   .header {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0% 100%);
   }
 }
+
 .header .logo {
   margin-right: 20px;
   width: 250px;
   height: 250px;
   background: url(../img/logo-color-dark-bg.svg) no-repeat center center;
 }
+
 @media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
   .header .logo {
     width: 200px;
     height: 200px;
   }
 }
+
 .header h1 {
-  font-family: "Arima", sans-serif;
+  font-family: 'Arima', sans-serif;
   font-size: 32px;
   font-weight: 300;
   color: #fff;
 }
+
 @media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
   .header h1 {
     font-size: 24px;
@@ -53,35 +58,41 @@ body {
   min-height: 100px;
   padding: 30px 0;
 }
+
 .footer .contact-info-container a {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  font-family: "Arima", sans-serif;
+  font-family: 'Arima', sans-serif;
   font-size: 32px;
   font-weight: 300;
   color: #fff;
   text-decoration: none;
 }
+
 @media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
   .footer .contact-info-container a {
     font-size: 18px;
   }
 }
+
 .footer .contact-info-container a .icon {
   margin-right: 10px;
   width: 48px;
   height: 48px;
 }
+
 @media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
   .footer .contact-info-container a .icon {
     width: 36px;
     height: 36px;
   }
 }
+
 .footer .contact-info-container a .icon.email {
   background: url(../img/icon-email.svg) no-repeat center center;
 }
+
 .footer .contact-info-container a .icon.facebook {
   background: url(../img/icon-facebook.svg) no-repeat center center;
-}/*# sourceMappingURL=styles.css.map */
+}
