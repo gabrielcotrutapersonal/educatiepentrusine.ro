@@ -1,85 +1,318 @@
 @import "include/variables";
 @import "include/mixins";
 
+// Stubs
+%header-footer-col-model {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .col {
+        flex: 1;
+        display: flex;
+
+        .content-box {
+            width: 600px;
+        }
+
+        &.left {
+            justify-content: flex-end;
+            margin-right: 25px;
+        }
+
+        &.right {
+            margin-left: 25px;
+        }
+    }
+}
+
+// Generic classes
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
     height: 100%;
     background-color: $page-background-color;
-    @include main-font(32px, 300);
+    @include main-font(18px, 400, 30px);
 }
 
+h1,
+.h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    @include main-font(36px, 700, 48px);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: $page-text-color;
+}
+
+hr.hspacer {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+a {
+    text-decoration: none;
+
+    &.link-with-icon {
+        display: flex;
+        align-items: center;
+        @include links-font(16px, 600);
+        color: $link-with-icon-text-color;
+        text-transform: uppercase;
+        transition: all .2s ease-in-out;
+
+        @include hover {
+            opacity: .8;
+        }
+
+        .icon {
+            opacity: .9;
+        }
+
+        .text {
+            margin-left: 10px;
+        }
+    }
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: $footer-form-input-background-color;
+    border: 1px solid $footer-form-input-border-color;
+    @include main-font(18px, 400);
+    transition: all .2s ease-in-out;
+
+    &:focus {
+        border: 1px solid $footer-form-input-focus-border-color;
+        outline: none;
+    }
+}
+
+textarea {
+    height: 150px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: $button-background-color;
+    border: none;
+    @include links-font(16px, 600);
+    color: $button-text-color;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    @include hover {
+        opacity: .8;
+    }
+}
+
+
+// App
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: calc(50% + 50px);
-    min-height: 500px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0% 100%);
-    background-color: black;
+    justify-content: flex-end;
+    height: 760px;
+    padding-top: 30px;
+    background-color: $header-background-color;
+    @include main-font(22px, 400, 34px);
 
-    @include phone {
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0% 100%);
+    p {
+        color: $header-content-text-color;
     }
 
-    & .logo {
-        margin-right: 20px;
-        width: 250px;
-        height: 250px;
-        background: url(../img/logo-color-dark-bg.svg) no-repeat center center;
+    .menu-container {
+        .logo {
+            margin-right: 20px;
+            width: 360px;
+            height: 163px;
+            background: url(../img/logo.svg) no-repeat center center;
 
-        @include phone-portrait {
-            width: 200px;
-            height: 200px;
+            @include phone-portrait {
+                width: 200px;
+                height: 200px;
+            }
         }
     }
 
-    & h1 {
-        @include main-font(32px, 300);
-        color: $text-color;
+    .content-container {
+        @extend %header-footer-col-model;
 
-        @include phone-portrait {
-            font-size: 24px;
+        align-items: flex-end;
+
+        .col {
+            align-items: flex-end;
+
+            &.left {
+                .stripe {
+                    margin-right: 25px;
+                    margin-bottom: -30px;
+                    width: 600px;
+                    height: 14px;
+                    background-color: $header-stripe-background-color;
+                }
+            }
+
+            &.right {
+                padding-top: 35px;
+
+                .content-box {
+                    margin-bottom: -30px;
+                    height: 560px;
+                    padding: 60px 60px 50px;
+                    background-color: $header-content-background-color;
+
+                    h1 {
+                        max-width: 400px;
+                        color: $header-heading-text-color;
+                    }
+
+                    p:first-of-type {
+                        margin-top: 30px;
+                    }
+
+                    hr.hspacer {
+                        margin: 15px -60px 15px 0;
+                        border-color: $header-spacer-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+    padding-top: calc(30px + 40px);
+    padding-bottom: calc(40px + 40px);
+
+    h1 {
+        color: $page-heading-color;
+    }
+
+    .container {
+        display: flex;
+        margin: 0 auto;
+        max-width: 1250px;
+
+        .col {
+            padding-top: 40px;
+
+            .content-box {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+
+            &.left {
+                padding-right: 25px;
+            }
+
+            &.right {
+                padding-left: 25px;
+            }
         }
     }
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
-    min-height: 100px;
-    padding: 30px 0;
+    background-color: $footer-background-color;
 
-    & .contact-info-container {
-        & a {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            @include main-font(32px, 300);
-            color: $text-color;
-            text-decoration: none;
+    .content-container {
+        @extend %header-footer-col-model;
 
-            @include phone-portrait {
-                font-size: 18px;
+        .col {
+            .content-box {
+                padding: 60px;
             }
 
-            & .icon {
-                margin-right: 10px;
-                width: 48px;
-                height: 48px;
+            &.left {
+                .content-box {
+                    display: flex;
+                    flex-direction: column;
 
-                @include phone-portrait {
-                    width: 36px;
-                    height: 36px;
+                    .contact-info-container {
+                        justify-self: flex-end;
+                        display: flex;
+                        flex-direction: column;
+
+                        .link-with-icon {
+                            margin-top: 30px;
+
+                            .icon {
+                                &.tel-whatsapp {
+                                    width: 40px;
+                                    height: 40px;
+                                    background: url(../img/icon-tel-whatsapp.svg) no-repeat center center;
+                                }
+
+                                &.email {
+                                    width: 40px;
+                                    height: 30px;
+                                    background: url(../img/icon-email.svg) no-repeat center center;
+                                }
+
+                                &.facebook {
+                                    width: 40px;
+                                    height: 40px;
+                                    background: url(../img/icon-facebook.svg) no-repeat center center;
+                                }
+                            }
+                        }
+                    }
                 }
+            }
 
-                &.email {
-                    background: url(../img/icon-email.svg) no-repeat center center;
-                }
+            &.right {
+                .content-box {
+                    margin-top: -30px;
+                    padding-top: 30px;
+                    background-color: $footer-content-background-color;
 
-                &.facebook {
-                    background: url(../img/icon-facebook.svg) no-repeat center center;
+                    form {
+                        padding-top: 40px;
+
+                        .row {
+                            padding-top: 20px;
+
+                            label {
+                                display: block;
+                                color: $footer-form-label-text-color;
+                                text-transform: uppercase;
+
+                                & + input[type=text],
+                                & + input[type=email],
+                                & + input[type=tel],
+                                & + textarea {
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

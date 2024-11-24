@@ -1,8 +1,39 @@
+:root {
+
+}
 // Color system
-$contrast-color: #101124;
-$accent-color: #9237CB;
-$text-color: #fff;
+$c1: #A3B8B4;
+$c2: #f4ede4;
+$c3: #615D52;
+$c4: #595959;
+$c5: #F1E8DD;
+$c6: #90788C;
+$c7: #EADCC9;
+$c8: #5A2C3A;
+// $c8: #007b83;
+$c9: #D2B48C;
+$c10: #AD9AA6;
 
 // Page
-$page-background-color: $accent-color;
-$header-background-color: $contrast-color;
+$page-background-color: $c2;
+$page-heading-color: $c4;
+$page-text-color: $c4;
+
+$link-with-icon-text-color: $c8;
+
+$button-background-color: $c8;
+$button-text-color: #fff;
+
+$header-background-color: $c3;
+$header-stripe-background-color: rgba($c6, .7);;
+$header-content-background-color: rgba($c1, .6);
+$header-heading-text-color: #fff;
+$header-content-text-color: #fff;
+$header-spacer-color: rgba($c5, .3);
+
+$footer-background-color: $c7;
+$footer-content-background-color: $c9;
+$footer-form-label-text-color: #fff;
+$footer-form-input-background-color: #fff;
+$footer-form-input-border-color: $c10;
+$footer-form-input-focus-border-color: $c8;
