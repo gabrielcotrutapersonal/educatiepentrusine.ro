@@ -92,8 +92,9 @@ try {
     <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Meta title -->
+    <!-- Meta title & description -->
     <title>Raluca Radu | Psiholog și psihoterapeut | Educație pentru sine</title>
+    <meta name="description" content="Depășește provocările vieții, descoperă-ti resursele și găsește-ți echilibrul interior. Sedințe de psihoterapie personalizate, adaptate nevoilor tale.">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
