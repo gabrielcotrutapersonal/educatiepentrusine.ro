@@ -126,7 +126,7 @@ try {
                 <div class="content-box">
                     <h1>Educație pentru sine. Stare de bine.</h1>
                     <hr class="hspacer" />
-                    <p>Bine ai venit! Sunt Raluca Radu, psiholog clinician și psihoterapeut.</p>
+                    <h1 class="p">Bine ai venit! Sunt Raluca Radu, psiholog clinician și psihoterapeut.</h1>
                     <p>Te susțin în descoperirea resurselor interioare pentru o viață cu sens și echilibru.</p>
                     <p>Găsește drumul potrivit pentru tine!</p>
                 </div>
@@ -176,7 +176,7 @@ try {
                         </a>
                         <a class="link-with-icon" href="https://www.facebook.com/EducatiePentruSine" target="_blank">
                             <span class="icon facebook"></span>
-                            <span class="text">Facebook.com/EducatiePentruSine</span>
+                            <span class="text"><span class="no-phone-portrait">Facebook.com/</span>EducatiePentruSine</span>
                         </a>
                     </div>
                 </div>

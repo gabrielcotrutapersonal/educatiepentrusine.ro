@@ -5,25 +5,49 @@
 %header-footer-col-model {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
 
     .col {
         flex: 1;
         display: flex;
 
+        @include phone {
+            min-width: 100%;
+        }
+
         .content-box {
             width: 600px;
+
+            @include phone {
+                width: 100vw;
+            }
         }
 
         &.left {
             justify-content: flex-end;
-            margin-right: 25px;
+            padding-right: 25px;
+
+            @include phone {
+                padding-right: 0;
+            }
         }
 
         &.right {
             margin-left: 25px;
+
+            @include phone {
+                margin-left: 0;
+            }
+
         }
     }
+}
+
+%ellipsis {
+    white-space: no-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 // Generic classes
@@ -49,13 +73,19 @@ h1,
 h2 {
     margin-top: 0;
     margin-bottom: 20px;
+    @include main-font(28px, 700, 40px);
 }
 
 
-p {
+p,
+.p {
     margin-top: 0;
     margin-bottom: 20px;
     color: $page-text-color;
+}
+
+strong {
+    font-weight: 700;
 }
 
 hr.hspacer {
@@ -84,6 +114,8 @@ a {
         }
 
         .text {
+            @extend %ellipsis;
+
             margin-left: 10px;
         }
     }
@@ -132,6 +164,12 @@ button {
     }
 }
 
+@include phone-portrait {
+    .no-phone-portrait {
+        display: none;
+    }
+}
+
 
 // App
 .header {
@@ -144,21 +182,33 @@ button {
     background-color: $header-background-color;
     @include main-font(22px, 400, 34px);
 
-    p {
+    @include phone {
+        justify-content: flex-start;
+        height: fit-content;
+    }
+
+    p,
+    .p {
+        @include main-font(22px, 400, 34px);
         color: $header-content-text-color;
     }
 
     .menu-container {
         .logo {
-            margin-right: 20px;
             width: 360px;
             height: 163px;
             background: url(../img/logo.svg) no-repeat center center;
 
             @include phone-portrait {
-                width: 200px;
-                height: 200px;
+                position: relative;
+                width: 300px;
+                height: 136px;
+                z-index: 1;
             }
+        }
+
+        .menu {
+            display: none;
         }
     }
 
@@ -171,17 +221,39 @@ button {
             align-items: flex-end;
 
             &.left {
+                height: 100%;
+                background: url(../img/raluca-radu-psiholog-psihoterapeut.jpg) no-repeat bottom -25px right -25px;
+                overflow: visible;
+
+                @include phone-portrait {
+                    margin-top: -130px;
+                    height: 600px;
+                    background-position: bottom center;
+                    background-size: cover;
+                }
+
                 .stripe {
                     margin-right: 25px;
                     margin-bottom: -30px;
                     width: 600px;
                     height: 14px;
                     background-color: $header-stripe-background-color;
+
+                    @include phone {
+                        margin-right: 0;
+                        margin-left: 30px;
+                        margin-bottom: 10px;
+                        width: calc(100vw - 30px);
+                    }
                 }
             }
 
             &.right {
                 padding-top: 35px;
+
+                @include phone {
+                    padding-top: 0;
+                }
 
                 .content-box {
                     margin-bottom: -30px;
@@ -189,18 +261,28 @@ button {
                     padding: 60px 60px 50px;
                     background-color: $header-content-background-color;
 
+                    @include phone {
+                        height: fit-content;
+                        padding: 30px 30px 60px;
+                    }
+
                     h1 {
                         max-width: 400px;
                         color: $header-heading-text-color;
+
+                        &.p {
+                            margin-top: 30px;
+                        }
                     }
 
-                    p:first-of-type {
-                        margin-top: 30px;
-                    }
 
                     hr.hspacer {
                         margin: 15px -60px 15px 0;
                         border-color: $header-spacer-color;
+
+                        @include phone {
+                            margin-right: -30px;
+                        }
                     }
                 }
             }
@@ -212,6 +294,11 @@ button {
     padding-top: calc(30px + 40px);
     padding-bottom: calc(40px + 40px);
 
+    @include phone {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
     h1 {
         color: $page-heading-color;
     }
@@ -221,20 +308,43 @@ button {
         margin: 0 auto;
         max-width: 1250px;
 
+        @include phone-portrait {
+            flex-wrap: wrap;
+            max-width: 100vw;
+        }
+
         .col {
             padding-top: 40px;
+
+            @include phone {
+                width: 100vw;
+            }
 
             .content-box {
                 padding-left: 60px;
                 padding-right: 60px;
+
+                @include phone {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
             }
 
             &.left {
                 padding-right: 25px;
+
+                @include phone {
+                    padding-right: 0;
+                }
             }
 
             &.right {
                 padding-left: 25px;
+
+                @include phone {
+                    padding-left: 0;
+                    padding-top: 25px;
+                }
             }
         }
     }
@@ -249,6 +359,10 @@ button {
         .col {
             .content-box {
                 padding: 60px;
+
+                @include phone {
+                    padding: 30px;
+                }
             }
 
             &.left {
@@ -266,19 +380,19 @@ button {
 
                             .icon {
                                 &.tel-whatsapp {
-                                    width: 40px;
+                                    min-width: 40px;
                                     height: 40px;
                                     background: url(../img/icon-tel-whatsapp.svg) no-repeat center center;
                                 }
 
                                 &.email {
-                                    width: 40px;
+                                    min-width: 40px;
                                     height: 30px;
                                     background: url(../img/icon-email.svg) no-repeat center center;
                                 }
 
                                 &.facebook {
-                                    width: 40px;
+                                    min-width: 40px;
                                     height: 40px;
                                     background: url(../img/icon-facebook.svg) no-repeat center center;
                                 }
@@ -294,6 +408,10 @@ button {
                     padding-top: 30px;
                     background-color: $footer-content-background-color;
 
+                    @include phone {
+                        margin-top: 0;
+                    }
+
                     .form-message {
                         margin-left: -60px;
                         margin-right: -60px;
@@ -302,6 +420,11 @@ button {
                         color: $footer-form-message-text-color;
                         @include main-font(16px, 400, 24px);
                         text-align: center;
+
+                        @include phone {
+                            margin-left: -30px;
+                            margin-right: -30px;
+                        }
 
                         &.error {
                             background-color: $footer-form-message-error-background-color;
