@@ -1,3 +1,71 @@
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+use App\Config;
+use App\Database;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+try {
+    $conn = Database::getConnection();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $message = htmlspecialchars($_POST['message']);
+
+        // Save to the database
+        $stmt = $conn->prepare("INSERT INTO contact_form_submissions (name, email, message) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $name, $email, $message);
+        $stmt->execute();
+
+        // Send the email
+        $mail = new PHPMailer(true);
+        try {
+            $mail->isSMTP();
+            $mail->Host = Config::get('email.smtpHost');
+            $mail->SMTPAuth = true;
+            $mail->Username = Config::get('email.smtpUser');
+            $mail->Password = Config::get('email.smtpPass');
+            $mail->SMTPSecure = Config::get('email.smtpSecure');
+            $mail->Port = Config::get('email.smtpPort');
+
+            $mail->setFrom(Config::get('email.smtpUser'), $name . ' (via Educație Pentru Sine)');
+            $mail->addAddress(Config::get('email.recipient'));
+
+            // Add Reply-To dynamically based on form submission
+            $mail->addReplyTo($email, $name);
+
+            $phone = htmlspecialchars($_POST['tel'] ?? '');
+
+            // Set email encoding to UTF-8
+            $mail->CharSet = 'UTF-8';
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Cerere nouă din formularul de contact';
+            $mail->Body = "
+                <h1>Cerere nouă din formularul de contact</h1>
+                <p><strong>Nume:</strong> $name</p>
+                <p><strong>E-mail:</strong> $email</p>" .
+                (!empty($phone) ? "<p><strong>Telefon:</strong> $phone</p>" : "") . "
+                <p><strong>Mesaj:</strong><br>$message</p>
+            ";
+
+            $mail->send();
+        } catch (Exception $e) {
+            echo json_encode(['success' => false, 'message' => 'Mesajul nu a fost trimis: ' . $mail->ErrorInfo]);
+            exit;
+        }
+
+        echo json_encode(['success' => true, 'message' => 'Vă mulțumim pentru mesaj. Vom lua legătura cu dumneavoastră în scurt timp.']);
+        exit;
+    }
+} catch (Exception $e) {
+    echo json_encode(['success' => false, 'message' => $e->getMessage()]);
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,8 +95,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVJPBMT69S"></script>
@@ -39,6 +107,9 @@
 
         gtag('config', 'G-PVJPBMT69S');
     </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
@@ -112,22 +183,23 @@
             </div>
             <div class="col right">
                 <div class="content-box">
-                    <form>
+                    <div class="form-message" id="formFeedback"></div>
+                    <form id="contactForm">
                         <div class="row">
                             <label for="name">Nume</label>
-                            <input type="text" id="name" autofocus />
+                            <input type="text" id="name" name="name" required autofocus />
                         </div>
                         <div class="row">
                             <label for="email">E-mail</label>
-                            <input type="email" id="email" />
+                            <input type="email" id="email" name="email" required />
                         </div>
                         <div class="row">
                             <label for="tel">Telefon</label>
-                            <input type="tel" id="tel" />
+                            <input type="tel" id="tel" name="tel" />
                         </div>
                         <div class="row">
                             <label for="message">Mesaj</label>
-                            <textarea id="message"></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
                         <div class="row">
                             <button>Trimite</button>
@@ -137,6 +209,7 @@
             </div>
         </div>
     </div>
+    <script src="js/contact-form.js"></script>
 </body>
 
 </html>

@@ -1,1 +1,4 @@
 educatiepentrusine.ro.code-workspace
+src/config.dev.yml
+src/config.prod.yml
+vendor/

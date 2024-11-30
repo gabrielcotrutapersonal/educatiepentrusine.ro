@@ -120,6 +120,7 @@ button {
     padding: 10px;
     background-color: $button-background-color;
     border: none;
+    outline: none;
     @include links-font(16px, 600);
     color: $button-text-color;
     text-transform: uppercase;
@@ -293,9 +294,25 @@ button {
                     padding-top: 30px;
                     background-color: $footer-content-background-color;
 
-                    form {
-                        padding-top: 40px;
+                    .form-message {
+                        margin-left: -60px;
+                        margin-right: -60px;
+                        min-height: 40px;
+                        padding: 15px 60px;
+                        color: $footer-form-message-text-color;
+                        @include main-font(16px, 400, 24px);
+                        text-align: center;
 
+                        &.error {
+                            background-color: $footer-form-message-error-background-color;
+                        }
+
+                        &.success {
+                            background-color: $footer-form-message-success-background-color;
+                        }
+                    }
+
+                    form {
                         .row {
                             padding-top: 20px;
 

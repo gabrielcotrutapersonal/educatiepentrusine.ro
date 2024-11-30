@@ -1,0 +1,36 @@
+services:
+  educatiepentrusine-apache:
+    build:
+      context: .
+      dockerfile: ./apache/Dockerfile
+    container_name: educatiepentrusine-apache
+    ports:
+      - "19080:80"
+      - "19443:443"
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      - APP_ENV=dev
+    networks:
+      - educatiepentrusine-network
+    depends_on:
+      - educatiepentrusine-mariadb
+
+  educatiepentrusine-mariadb:
+    image: mariadb:latest
+    container_name: educatiepentrusine-mariadb
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "sEcUr3!Root#P@ssw0rd"
+      MYSQL_DATABASE: educatiepentrusine
+      MYSQL_USER: app_user_Kl8X
+      MYSQL_PASSWORD: "]aV2!tX9^fNk#Z03"
+    volumes:
+      - ./mariadb/init:/docker-entrypoint-initdb.d
+    networks:
+      - educatiepentrusine-network
+
+networks:
+  educatiepentrusine-network:
+    driver: bridge
