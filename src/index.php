@@ -13,11 +13,28 @@ try {
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
         $message = htmlspecialchars($_POST['message']);
+        $phone = htmlspecialchars($_POST['tel'] ?? '');
+
+        // Validate input data
+        if (empty($name) || empty($email) || empty($message)) {
+            echo json_encode(['success' => false, 'message' => 'Toate câmpurile sunt obligatorii.']);
+            exit;
+        }
 
         // Save to the database
         $stmt = $conn->prepare("INSERT INTO contact_form_submissions (name, email, message) VALUES (?, ?, ?)");
+        if (!$stmt) {
+            error_log('SQL Error (prepare): ' . $conn->error);
+            echo json_encode(['success' => false, 'message' => 'A apărut o eroare la salvarea mesajului.']);
+            exit;
+        }
+
         $stmt->bind_param("sss", $name, $email, $message);
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            error_log('SQL Error (execute): ' . $stmt->error);
+            echo json_encode(['success' => false, 'message' => 'A apărut o eroare la salvarea mesajului.']);
+            exit;
+        }
 
         // Send the email
         $mail = new PHPMailer(true);
@@ -36,8 +53,6 @@ try {
             // Add Reply-To dynamically based on form submission
             $mail->addReplyTo($email, $name);
 
-            $phone = htmlspecialchars($_POST['tel'] ?? '');
-
             // Set email encoding to UTF-8
             $mail->CharSet = 'UTF-8';
 
@@ -53,6 +68,7 @@ try {
 
             $mail->send();
         } catch (Exception $e) {
+            error_log('Email Error: ' . $mail->ErrorInfo);
             echo json_encode(['success' => false, 'message' => 'Mesajul nu a fost trimis: ' . $mail->ErrorInfo]);
             exit;
         }
@@ -61,6 +77,7 @@ try {
         exit;
     }
 } catch (Exception $e) {
+    error_log('General Error: ' . $e->getMessage());
     echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     exit;
 }
