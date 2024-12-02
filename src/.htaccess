@@ -1,0 +1,18 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^educatiepentrusine\.ro$
+RewriteRule ^/?$ "https\:\/\/www\.educatiepentrusine\.ro\/" [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit
+
+<IfModule LiteSpeed>
+    CacheEnable public /
+    CacheLookup on
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{REQUEST_URI} !^/admin/ [NC]
+    RewriteCond %{HTTP_COOKIE} !login_cookie
+    RewriteRule .* - [E=Cache-Control:max-age=3600]
+</IfModule>
