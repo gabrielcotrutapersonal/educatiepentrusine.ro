@@ -8,6 +8,10 @@
     flex-wrap: wrap;
     width: 100%;
 
+    @include phone {
+        width: 100vw;
+    }
+
     .col {
         flex: 1;
         display: flex;
@@ -61,13 +65,18 @@ body {
     height: 100%;
     background-color: $page-background-color;
     @include main-font(18px, 400, 30px);
+    overflow-x: hidden;
 }
 
 h1,
 .h1 {
     margin-top: 0;
     margin-bottom: 30px;
-    @include main-font(36px, 700, 48px);
+    @include main-font(35px, 700, 48px);
+
+    @include phone-portrait {
+        @include main-font(35px, 700, 47px);
+    }
 }
 
 h2 {
@@ -183,6 +192,7 @@ button {
     @include main-font(22px, 400, 34px);
 
     @include phone {
+        padding-top: 20px;
         justify-content: flex-start;
         height: fit-content;
     }
@@ -226,8 +236,8 @@ button {
                 overflow: visible;
 
                 @include phone-portrait {
-                    margin-top: -130px;
-                    height: 600px;
+                    margin-top: -160px;
+                    height: 540px;
                     background-position: bottom center;
                     background-size: cover;
                 }
@@ -241,9 +251,9 @@ button {
 
                     @include phone {
                         margin-right: 0;
-                        margin-left: 30px;
+                        margin-left: 20px;
                         margin-bottom: 10px;
-                        width: calc(100vw - 30px);
+                        width: calc(100vw - 20px);
                     }
                 }
             }
@@ -263,7 +273,7 @@ button {
 
                     @include phone {
                         height: fit-content;
-                        padding: 30px 30px 60px;
+                        padding: 20px 20px 40px;
                     }
 
                     h1 {
@@ -318,6 +328,7 @@ button {
 
             @include phone {
                 width: 100vw;
+                padding-top: 30px;
             }
 
             .content-box {
@@ -325,8 +336,8 @@ button {
                 padding-right: 60px;
 
                 @include phone {
-                    padding-left: 30px;
-                    padding-right: 30px;
+                    padding-left: 20px;
+                    padding-right: 20px;
                 }
             }
 
@@ -343,7 +354,15 @@ button {
 
                 @include phone {
                     padding-left: 0;
-                    padding-top: 25px;
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        @include phone-portrait {
+            &.single {
+                .col {
+                    padding-top: 10px;
                 }
             }
         }
@@ -361,7 +380,7 @@ button {
                 padding: 60px;
 
                 @include phone {
-                    padding: 30px;
+                    padding: 30px 20px;
                 }
             }
 
