@@ -127,7 +127,7 @@ try {
     </script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2024120801">
 </head>
 
 <body>
