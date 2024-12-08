@@ -205,7 +205,7 @@ try {
                     <form id="contactForm">
                         <div class="row">
                             <label for="name">Nume</label>
-                            <input type="text" id="name" name="name" required autofocus />
+                            <input type="text" id="name" name="name" required />
                         </div>
                         <div class="row">
                             <label for="email">E-mail</label>
