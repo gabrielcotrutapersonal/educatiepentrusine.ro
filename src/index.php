@@ -116,6 +116,26 @@ try {
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- Google structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Raluca Radu",
+        "image": "https://www.educatiepentrusine.ro/assets/img/raluca-radu-psiholog-psihoterapeut.jpg",
+        "jobTitle": "Psiholog clinician și psihoterapeut",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Cabinet Individual Psihologie"
+        },
+        "url": "https://www.educatiepentrusine.ro",
+        "sameAs": [
+            "https://www.linkedin.com/in/raradu/",
+            "https://www.facebook.com/EducatiePentruSine"
+        ]
+    }
+    </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVJPBMT69S"></script>
     <script>
