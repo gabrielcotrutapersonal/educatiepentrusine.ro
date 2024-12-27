@@ -244,274 +244,366 @@ section {
 }
 
 // App
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    padding-top: 30px;
-    background-color: $header-background-color;
-    @include main-font(22px, 400, 34px);
-
-    h1 {
-        color: $header-heading-text-color;
-    }
-
-    p,
-    .p {
-        @include main-font(22px, 400, 34px);
-        color: $header-content-text-color;
-    }
-
-    .menu-container {
-        width: 1250px;
-        max-width: 1250px;
+body {
+    .header {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding-top: 30px;
+        background-color: $header-background-color;
+        @include main-font(22px, 400, 34px);
 
-        .logo {
-            flex: 1;
-            height: 163px;
-            margin-right: 25px;
-            background: url(../img/logo.svg) no-repeat center center;
+        h1 {
+            color: $header-heading-text-color;
+        }
 
-            @include phone {
-                margin-right: 0;
+        p,
+        .p {
+            @include main-font(22px, 400, 34px);
+            color: $header-content-text-color;
+        }
+
+        .menu-container {
+            width: 1250px;
+            max-width: 1250px;
+            display: flex;
+
+            @include phone-portrait {
+                position: sticky;
+                top: 20px;
+            }
+
+            .logo {
+                flex: 1;
+                height: 163px;
+                margin-right: 25px;
+                background: url(../img/logo.svg) no-repeat center center;
+
+                @include phone {
+                    margin-right: 0;
+                }
+
+                @include phone-portrait {
+                    position: relative;
+                    width: 300px;
+                    height: 136px;
+                    z-index: 1;
+                }
+            }
+
+            nav.main-nav {
+                position: static;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                margin-left: 25px;
+                max-width: calc(50% - 25px);
+                padding-left: 60px;
+                padding-right: 60px;
+                z-index: 2;
+
+                @include phone {
+                    position: fixed;
+                    top: 35px;
+                    right: 35px;
+                    flex-direction: column;
+                    margin-left: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                .burger-menu {
+                    display: none;
+                    background: none;
+                    z-index: 2;
+
+                    @include phone-portrait {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 40px;
+                        height: 34px;
+                        padding: 5px;
+
+                        .burger-bar {
+                            display: block;
+                            width: 100%;
+                            height: 4px;
+                            background-color: $header-nav-burger-menu-color;
+                            transition: transform 0.3s ease, opacity 0.3s ease;
+                        }
+
+                        &.open {
+                            .burger-bar:nth-child(1) {
+                                transform: rotate(45deg) translate(7px, 7px);
+                                background-color: $mobile-header-nav-text-color;
+                            }
+
+                            .burger-bar:nth-child(2) {
+                                opacity: 0;
+                            }
+
+                            .burger-bar:nth-child(3) {
+                                transform: rotate(-45deg) translate(7px, -7px);
+                                background-color: $mobile-header-nav-text-color;
+                            }
+                        }
+                    }
+                }
+
+                ul.menu {
+                    display: flex;
+                    gap: 40px;
+                    margin: 35px 0 0;
+                    padding: 0;
+
+                    li {
+                        &::before,
+                        &::after {
+                            display: none;
+                        }
+
+                        a {
+                            @include links-font(16px, 600);
+                            color: $header-nav-text-color;
+                            text-transform: uppercase;
+                            transition: opacity .2s ease-in-out;
+
+                            &.but-home {
+                                svg {
+                                    margin-bottom: 10px;
+                                    display: block;
+                                    width: 30px;
+                                    height: 34px;
+                                    fill: $header-nav-text-color;
+                                }
+                            }
+
+                            @include hover {
+                                opacity: .8;
+                            }
+                        }
+                    }
+
+                    @include phone-portrait {
+                        display: none;
+
+                        &.open {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            display: flex;
+                            flex-direction: column;
+                            margin: 0;
+                            width: 100vw;
+                            padding: 35px 30px 30px;
+                            gap: 20px;
+                            background-color: $mobile-header-nav-background-color;
+
+                            li {
+                                a {
+                                    color: $mobile-header-nav-text-color;
+
+                                    &.but-home {
+                                        svg {
+                                            fill: $mobile-header-nav-text-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-container {
+            align-items: flex-end;
+
+            .col {
+                align-items: flex-end;
+
+                &.content {
+                    padding-top: 35px;
+
+                    @include phone {
+                        padding-top: 0;
+                    }
+
+                    .content-box {
+                        margin-bottom: -30px;
+                        padding: 60px 60px 50px;
+                        background-color: $header-content-background-color;
+
+                        @include phone {
+                            padding: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        h1 {
+            color: $page-heading-color;
+        }
+
+        .container {
+            display: flex;
+            margin: 0 auto;
+
+            @include phone-portrait {
+                flex-wrap: wrap;
+            }
+
+            .col {
+                padding-top: 40px;
+
+                @include phone {
+                    width: 100vw;
+                    padding-top: 30px;
+                }
+
+                .content-box {
+                    padding-left: 60px;
+                    padding-right: 60px;
+
+                    @include phone {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+                }
+
+                &.left {
+                    padding-right: 25px;
+
+                    @include phone {
+                        padding-right: 0;
+                    }
+                }
+
+                &.right {
+                    padding-left: 25px;
+
+                    @include phone {
+                        padding-left: 0;
+                        padding-top: 10px;
+                    }
+                }
             }
 
             @include phone-portrait {
-                position: relative;
-                width: 300px;
-                height: 136px;
-                z-index: 1;
-            }
-        }
-
-        nav {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            margin-left: 25px;
-            max-width: calc(50% - 25px);
-            padding-left: 60px;
-            padding-right: 60px;
-
-            @include phone {
-                margin-left: 0;
-            }
-
-            a {
-                margin-top: 35px;
-                @include links-font(16px, 600);
-                color: $header-nav-text-color;
-                text-transform: uppercase;
-                transition: opacity .2s ease-in-out;
-
-                .icon {
-                    &.home {
-                        margin-bottom: 10px;
-                        display: block;
-                        width: 30px;
-                        height: 34px;
-                        background: url(../img/icon-home.svg) no-repeat center center;
+                &.single {
+                    .col {
+                        padding-top: 10px;
                     }
-                }
-
-                &:not(:last-child) {
-                    margin-right: 40px;
-                }
-
-                @include hover {
-                    opacity: .8;
                 }
             }
         }
     }
 
-    .content-container {
-        align-items: flex-end;
+    .footer {
+        background-color: $footer-background-color;
 
-        .col {
-            align-items: flex-end;
+        .content-container {
+            @extend %header-footer-col-model;
 
-            &.content {
-                padding-top: 35px;
-
-                @include phone {
-                    padding-top: 0;
-                }
-
+            .col {
                 .content-box {
-                    margin-bottom: -30px;
-                    padding: 60px 60px 50px;
-                    background-color: $header-content-background-color;
+                    padding: 60px;
 
                     @include phone {
-                        padding: 20px;
+                        padding: 30px 20px;
                     }
                 }
-            }
-        }
-    }
-}
 
-.main {
-    h1 {
-        color: $page-heading-color;
-    }
-
-    .container {
-        display: flex;
-        margin: 0 auto;
-
-        @include phone-portrait {
-            flex-wrap: wrap;
-        }
-
-        .col {
-            padding-top: 40px;
-
-            @include phone {
-                width: 100vw;
-                padding-top: 30px;
-            }
-
-            .content-box {
-                padding-left: 60px;
-                padding-right: 60px;
-
-                @include phone {
-                    padding-left: 20px;
-                    padding-right: 20px;
-                }
-            }
-
-            &.left {
-                padding-right: 25px;
-
-                @include phone {
-                    padding-right: 0;
-                }
-            }
-
-            &.right {
-                padding-left: 25px;
-
-                @include phone {
-                    padding-left: 0;
-                    padding-top: 10px;
-                }
-            }
-        }
-
-        @include phone-portrait {
-            &.single {
-                .col {
-                    padding-top: 10px;
-                }
-            }
-        }
-    }
-}
-
-.footer {
-    background-color: $footer-background-color;
-
-    .content-container {
-        @extend %header-footer-col-model;
-
-        .col {
-            .content-box {
-                padding: 60px;
-
-                @include phone {
-                    padding: 30px 20px;
-                }
-            }
-
-            &.left {
-                .content-box {
-                    display: flex;
-                    flex-direction: column;
-
-                    .contact-info-container {
-                        justify-self: flex-end;
+                &.left {
+                    .content-box {
                         display: flex;
                         flex-direction: column;
 
-                        .link-with-icon {
-                            margin-top: 30px;
+                        .contact-info-container {
+                            justify-self: flex-end;
+                            display: flex;
+                            flex-direction: column;
 
-                            .icon {
-                                &.tel-whatsapp {
-                                    min-width: 40px;
-                                    height: 40px;
-                                    background: url(../img/icon-tel-whatsapp.svg) no-repeat center center;
-                                }
+                            .link-with-icon {
+                                margin-top: 30px;
 
-                                &.email {
-                                    min-width: 40px;
-                                    height: 30px;
-                                    background: url(../img/icon-email.svg) no-repeat center center;
-                                }
+                                .icon {
+                                    &.tel-whatsapp {
+                                        min-width: 40px;
+                                        height: 40px;
+                                        background: url(../img/icon-tel-whatsapp.svg) no-repeat center center;
+                                    }
 
-                                &.facebook {
-                                    min-width: 40px;
-                                    height: 40px;
-                                    background: url(../img/icon-facebook.svg) no-repeat center center;
+                                    &.email {
+                                        min-width: 40px;
+                                        height: 30px;
+                                        background: url(../img/icon-email.svg) no-repeat center center;
+                                    }
+
+                                    &.facebook {
+                                        min-width: 40px;
+                                        height: 40px;
+                                        background: url(../img/icon-facebook.svg) no-repeat center center;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            &.right {
-                .content-box {
-                    margin-top: -30px;
-                    padding-top: 30px;
-                    background-color: $footer-content-background-color;
-
-                    @include phone {
-                        margin-top: 0;
-                    }
-
-                    .form-message {
-                        margin-left: -60px;
-                        margin-right: -60px;
-                        min-height: 40px;
-                        padding: 15px 60px;
-                        color: $footer-form-message-text-color;
-                        @include main-font(16px, 400, 24px);
-                        text-align: center;
+                &.right {
+                    .content-box {
+                        margin-top: -30px;
+                        padding-top: 30px;
+                        background-color: $footer-content-background-color;
 
                         @include phone {
-                            margin-left: -30px;
-                            margin-right: -30px;
+                            margin-top: 0;
                         }
 
-                        &.error {
-                            background-color: $footer-form-message-error-background-color;
+                        .form-message {
+                            margin-left: -60px;
+                            margin-right: -60px;
+                            min-height: 40px;
+                            padding: 15px 60px;
+                            color: $footer-form-message-text-color;
+                            @include main-font(16px, 400, 24px);
+                            text-align: center;
+
+                            @include phone {
+                                margin-left: -30px;
+                                margin-right: -30px;
+                            }
+
+                            &.error {
+                                background-color: $footer-form-message-error-background-color;
+                            }
+
+                            &.success {
+                                background-color: $footer-form-message-success-background-color;
+                            }
                         }
 
-                        &.success {
-                            background-color: $footer-form-message-success-background-color;
-                        }
-                    }
+                        form {
+                            .row {
+                                padding-top: 20px;
 
-                    form {
-                        .row {
-                            padding-top: 20px;
+                                label {
+                                    display: block;
+                                    color: $footer-form-label-text-color;
+                                    text-transform: uppercase;
 
-                            label {
-                                display: block;
-                                color: $footer-form-label-text-color;
-                                text-transform: uppercase;
-
-                                & + input[type=text],
-                                & + input[type=email],
-                                & + input[type=tel],
-                                & + textarea {
-                                    margin-top: 5px;
+                                    & + input[type=text],
+                                    & + input[type=email],
+                                    & + input[type=tel],
+                                    & + textarea {
+                                        margin-top: 5px;
+                                    }
                                 }
                             }
                         }
@@ -519,6 +611,10 @@ section {
                 }
             }
         }
+    }
+
+    &.menu-open {
+        overflow: hidden;
     }
 }
 
