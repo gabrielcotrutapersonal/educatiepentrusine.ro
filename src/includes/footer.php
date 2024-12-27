@@ -22,8 +22,8 @@
         </div>
         <div class="col right">
             <div class="content-box">
-                <div class="form-message" id="formFeedback"></div>
-                <form id="contactForm">
+                <div class="form-message" id="formFeedback" data-role="form-feedback"></div>
+                <form id="contactForm" data-role="contact-form">
                     <div class="row">
                         <label for="name">Nume</label>
                         <input type="text" id="name" name="name" required />
@@ -49,5 +49,4 @@
     </div>
 </footer>
 
-<script src="js/main.js"></script>
-<script src="js/contact-form.js"></script>
+<script src="js/main.js?v=<?php echo getFileVersion(BASE_PATH . '/js/main.js'); ?>"></script>

@@ -1,3 +1,9 @@
+<?php
+function getFileVersion($filePath) {
+    return file_exists($filePath) ? filemtime($filePath) : time();
+}
+?>
+
 <head>
     <!-- Charset -->
     <meta charset="UTF-8">
@@ -60,5 +66,5 @@
     </script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/styles.css?v=2024122701">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=<?php echo getFileVersion(BASE_PATH . '/assets/css/styles.css'); ?>">
 </head>
