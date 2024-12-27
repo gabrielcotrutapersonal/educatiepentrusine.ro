@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li><a href="/misiune.php">Misiune, viziune, valori</a></li>
-                <!-- <li><a href="/contact.php">Contact</a></li> -->
+                <li><a href="/contact.php">Contact</a></li>
             </ul>
         </nav>
     </div>
