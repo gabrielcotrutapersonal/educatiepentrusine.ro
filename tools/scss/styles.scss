@@ -245,7 +245,7 @@ section {
 
 // App
 body {
-    .header {
+    header {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -445,7 +445,7 @@ body {
         }
     }
 
-    .main {
+    main {
         h1 {
             color: $page-heading-color;
         }
@@ -504,7 +504,7 @@ body {
         }
     }
 
-    .footer {
+    footer {
         background-color: $footer-background-color;
 
         .content-container {
@@ -620,7 +620,7 @@ body {
 
 // Homepage
 body.page-home {
-    .header {
+    header {
         height: 758px;
 
         @include phone {
@@ -698,7 +698,7 @@ body.page-home {
 
 // Misiune, viziune, valori
 body.page-mission {
-    .header {
+    header {
         .content-container {
             @include phone {
                 padding-top: 30px;
@@ -725,7 +725,7 @@ body.page-mission {
         }
     }
 
-    .main {
+    main {
         section.mission {
             @include phone {
                 padding-top: 0;
