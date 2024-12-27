@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     // Add or remove 'is-scrolled' class based on scroll position
     $(window).on("scroll", function () {
-        if ($(this).scrollTop() > 50) {
+        if ($(this).scrollTop() > 10) {
             $body.addClass("is-scrolled");
         } else {
             $body.removeClass("is-scrolled");
