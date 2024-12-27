@@ -1,4 +1,8 @@
-.header .content-container, .footer .content-container {
+.text-align-center {
+  text-align: center;
+}
+
+.footer .content-container, body.page-home .header .content-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -6,49 +10,49 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container, .footer .content-container {
+  .footer .content-container, body.page-home .header .content-container {
     width: 100vw;
   }
 }
 
-.header .content-container .col, .footer .content-container .col {
+.footer .content-container .col, body.page-home .header .content-container .col {
   flex: 1;
   display: flex;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col, .footer .content-container .col {
+  .footer .content-container .col, body.page-home .header .content-container .col {
     min-width: 100%;
   }
 }
 
-.header .content-container .col .content-box, .footer .content-container .col .content-box {
+.footer .content-container .col .content-box, body.page-home .header .content-container .col .content-box {
   width: 600px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col .content-box, .footer .content-container .col .content-box {
+  .footer .content-container .col .content-box, body.page-home .header .content-container .col .content-box {
     width: 100vw;
   }
 }
 
-.header .content-container .col.left, .footer .content-container .col.left {
+.footer .content-container .col.left, body.page-home .header .content-container .col.left {
   justify-content: flex-end;
   padding-right: 25px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col.left, .footer .content-container .col.left {
+  .footer .content-container .col.left, body.page-home .header .content-container .col.left {
     padding-right: 0;
   }
 }
 
-.header .content-container .col.right, .footer .content-container .col.right {
+.footer .content-container .col.right, body.page-home .header .content-container .col.right {
   margin-left: 25px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col.right, .footer .content-container .col.right {
+  .footer .content-container .col.right, body.page-home .header .content-container .col.right {
     margin-left: 0;
   }
 }
@@ -111,8 +115,38 @@ p,
   color: #595959;
 }
 
+ul li {
+  position: relative;
+  list-style-type: none;
+  color: #595959;
+}
+
+ul li::before {
+  position: absolute;
+  left: -40px;
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  border: 2px solid #5A2C3A;
+  content: "";
+}
+
+ul li::after {
+  position: absolute;
+  top: 8px;
+  left: -32px;
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border: 2px solid #5A2C3A;
+  content: "";
+}
+
 strong {
   font-weight: 700;
+  color: #000;
 }
 
 hr.hspacer {
@@ -208,12 +242,44 @@ button {
   }
 }
 
+section {
+  padding-top: calc(30px + 40px);
+  padding-bottom: calc(40px + 40px);
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+section.background-alternative {
+  background-color: #EADCC9;
+}
+
+.container {
+  width: 1250px;
+  max-width: 1250px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  .container {
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
+
+.stripe {
+  height: 14px;
+  background-color: rgba(144, 120, 140, 0.7);
+}
+
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  height: 760px;
   padding-top: 30px;
   background-color: #615D52;
   font-family: 'Merriweather', serif;
@@ -222,12 +288,8 @@ button {
   line-height: 34px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
-  .header {
-    padding-top: 20px;
-    justify-content: flex-start;
-    height: fit-content;
-  }
+.header h1 {
+  color: #fff;
 }
 
 .header p,
@@ -239,10 +301,23 @@ button {
   color: #fff;
 }
 
+.header .menu-container {
+  width: 1250px;
+  max-width: 1250px;
+  display: flex;
+}
+
 .header .menu-container .logo {
-  width: 360px;
+  flex: 1;
   height: 163px;
+  margin-right: 25px;
   background: url(../img/logo.svg) no-repeat center center;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .header .menu-container .logo {
+    margin-right: 0;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
@@ -254,8 +329,48 @@ button {
   }
 }
 
-.header .menu-container .menu {
-  display: none;
+.header .menu-container nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  max-width: calc(50% - 25px);
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .header .menu-container nav {
+    margin-left: 0;
+  }
+}
+
+.header .menu-container nav a {
+  margin-top: 35px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  transition: opacity .2s ease-in-out;
+}
+
+.header .menu-container nav a .icon.home {
+  margin-bottom: 10px;
+  display: block;
+  width: 30px;
+  height: 34px;
+  background: url(../img/icon-home.svg) no-repeat center center;
+}
+
+.header .menu-container nav a:not(:last-child) {
+  margin-right: 40px;
+}
+
+@media (hover: hover) {
+  .header .menu-container nav a:hover {
+    opacity: .8;
+  }
 }
 
 .header .content-container {
@@ -266,91 +381,25 @@ button {
   align-items: flex-end;
 }
 
-.header .content-container .col.left {
-  height: 100%;
-  background: url(../img/raluca-radu-psiholog-psihoterapeut.jpg) no-repeat bottom -25px right -25px;
-  overflow: visible;
-}
-
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
-  .header .content-container .col.left {
-    margin-top: -160px;
-    height: 540px;
-    background-position: bottom center;
-    background-size: cover;
-  }
-}
-
-.header .content-container .col.left .stripe {
-  margin-right: 25px;
-  margin-bottom: -30px;
-  width: 600px;
-  height: 14px;
-  background-color: rgba(144, 120, 140, 0.7);
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col.left .stripe {
-    margin-right: 0;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    width: calc(100vw - 20px);
-  }
-}
-
-.header .content-container .col.right {
+.header .content-container .col.content {
   padding-top: 35px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col.right {
+  .header .content-container .col.content {
     padding-top: 0;
   }
 }
 
-.header .content-container .col.right .content-box {
+.header .content-container .col.content .content-box {
   margin-bottom: -30px;
-  height: 560px;
   padding: 60px 60px 50px;
   background-color: rgba(163, 184, 180, 0.6);
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col.right .content-box {
-    height: fit-content;
-    padding: 20px 20px 40px;
-  }
-}
-
-.header .content-container .col.right .content-box h1 {
-  max-width: 400px;
-  color: #fff;
-}
-
-.header .content-container .col.right .content-box h1.p {
-  margin-top: 30px;
-}
-
-.header .content-container .col.right .content-box hr.hspacer {
-  margin: 15px -60px 15px 0;
-  border-color: rgba(241, 232, 221, 0.3);
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .header .content-container .col.right .content-box hr.hspacer {
-    margin-right: -30px;
-  }
-}
-
-.main {
-  padding-top: calc(30px + 40px);
-  padding-bottom: calc(40px + 40px);
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .main {
-    padding-top: 30px;
-    padding-bottom: 30px;
+  .header .content-container .col.content .content-box {
+    padding: 20px;
   }
 }
 
@@ -361,13 +410,11 @@ button {
 .main .container {
   display: flex;
   margin: 0 auto;
-  max-width: 1250px;
 }
 
 @media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
   .main .container {
     flex-wrap: wrap;
-    max-width: 100vw;
   }
 }
 
@@ -523,4 +570,211 @@ button {
 .footer .content-container .col.right .content-box form .row label + input[type=tel],
 .footer .content-container .col.right .content-box form .row label + textarea {
   margin-top: 5px;
+}
+
+body.page-home .header {
+  height: 758px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-home .header {
+    padding-top: 20px;
+    justify-content: flex-start;
+    height: fit-content;
+  }
+}
+
+body.page-home .header .content-container .col.left.photo {
+  height: 100%;
+  background: url(../img/raluca-radu-psiholog-psihoterapeut.jpg) no-repeat bottom -25px right -25px;
+  overflow: visible;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-home .header .content-container .col.left.photo {
+    margin-top: -160px;
+    height: 540px;
+    background-position: bottom center;
+    background-size: cover;
+  }
+}
+
+body.page-home .header .content-container .col.left.photo .stripe {
+  margin-right: 25px;
+  margin-bottom: -30px;
+  width: 600px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-home .header .content-container .col.left.photo .stripe {
+    margin-right: 0;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: calc(100vw - 20px);
+  }
+}
+
+body.page-home .header .content-container .col.right.content .content-box {
+  height: 560px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-home .header .content-container .col.right.content .content-box {
+    padding-bottom: 40px;
+    height: fit-content;
+  }
+}
+
+body.page-home .header .content-container .col.right.content .content-box h1 {
+  max-width: 400px;
+}
+
+body.page-home .header .content-container .col.right.content .content-box h1.p {
+  margin-top: 30px;
+}
+
+body.page-home .header .content-container .col.right.content .content-box hr.hspacer {
+  margin: 15px -60px 15px 0;
+  border-color: rgba(241, 232, 221, 0.3);
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-home .header .content-container .col.right.content .content-box hr.hspacer {
+    margin-right: -30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-mission .header .content-container {
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-mission .header .content-container .col.content .content-box {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .header .content-container .col.content .content-box h1.text-align-center {
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-mission .main section.mission {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.mission-container {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-mission .main .container.mission-container .col.right.photo {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.mission-container .col.right.photo {
+    max-height: 340px;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.mission-container .col.right.photo img {
+    width: 100vw;
+  }
+}
+
+body.page-mission .main .container.vision-container {
+  flex-direction: column;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.vision-container {
+    flex-wrap: wrap;
+  }
+}
+
+body.page-mission .main .container.vision-container .container .col {
+  flex: 1;
+  padding-top: 0;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.vision-container .container .col {
+    min-width: 100vw;
+  }
+}
+
+body.page-mission .main .container.vision-container .container .col .stripe {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.vision-container .container .col .stripe {
+    margin-left: 20px;
+  }
+}
+
+body.page-mission .main .container.vision-container .container .col.left {
+  padding-right: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.vision-container .container .col.left {
+    padding-right: 0;
+  }
+}
+
+body.page-mission .main .container.vision-container .container .col.middle {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.vision-container .container .col.middle {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+body.page-mission .main .container.vision-container .container .col.right {
+  padding-left: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.vision-container .container .col.right {
+    padding-left: 0;
+  }
+}
+
+body.page-mission .main .container.values-intro-container .col {
+  padding-top: 0;
+}
+
+body.page-mission .main .container.values-container .col {
+  flex: 1;
+  padding-top: 0;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.values-container .col.left .content-box ul {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-mission .main .container.values-container .col.right .content-box ul {
+    margin-top: 0;
+  }
 }
