@@ -268,6 +268,18 @@ section.background-alternative {
   }
 }
 
+.container.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  .container.full-width {
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
+
 .stripe {
   height: 14px;
   background-color: rgba(144, 120, 140, 0.7);
@@ -328,6 +340,7 @@ body header .menu-container .menu-bar {
 
 body header .menu-container .menu-bar .logo {
   flex: 1;
+  max-width: 520px;
   height: 163px;
   margin-right: 25px;
   background: url(../img/logo.svg) no-repeat center center;
@@ -353,10 +366,9 @@ body header .menu-container .menu-bar nav.main-nav {
   position: static;
   flex: 1;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   margin-left: 25px;
-  max-width: calc(50% - 25px);
-  padding-left: 60px;
   padding-right: 60px;
   z-index: 2;
 }
@@ -636,8 +648,8 @@ body footer .content-container .col.right .content-box .form-message {
 
 @media (min-width: 320px) and (max-width: 767px) {
   body footer .content-container .col.right .content-box .form-message {
-    margin-left: -30px;
-    margin-right: -30px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }
 
@@ -883,6 +895,242 @@ body.page-mission main .container.values-container .col {
   body.page-mission main .container.values-container .col.right .content-box ul {
     margin-top: 0;
   }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-services header .content-container {
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-services header .content-container .col.content .content-box {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services header .content-container .col.content .content-box h1.text-align-center {
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-services main section.services {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.services-container {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-services main .container.services-container .col.right.photo {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.services-container .col.right.photo img {
+    width: 100vw;
+  }
+}
+
+body.page-services main .container.work-areas-container {
+  flex-direction: column;
+}
+
+body.page-services main .container.work-areas-container .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-services main .container.work-areas-container .container {
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1249px) {
+  body.page-services main .container.work-areas-container .container {
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  max-width: 25%;
+  height: fit-content;
+  padding: 10px 20px 0;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-services main .container.work-areas-container .container .col {
+    min-width: 50%;
+    max-width: 50%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+body.page-services main .container.work-areas-container .container .col .box .stripe {
+  width: 100%;
+  min-height: 14px;
+}
+
+body.page-services main .container.work-areas-container .container .col .box .content-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+body.page-services main .container.work-areas-container .container .col .box .content-box p {
+  margin-bottom: 0;
+}
+
+body.page-services main .container.work-areas-container .container .col .box.anxiety .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.anxiety .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.relationships .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.relationships .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.loneliness .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.loneliness .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.motivation .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.motivation .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.self-esteem .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.self-esteem .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.ptsd .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.ptsd .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.sleep .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.sleep .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.loss .content-box {
+  width: 220px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.loss .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col .box.balance .content-box {
+  width: 230px;
+}
+
+@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+  body.page-services main .container.work-areas-container .container .col .box.balance .content-box {
+    width: 100%;
+  }
+}
+
+body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 1) {
+  padding-left: 0;
+}
+
+body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 4) {
+  padding-top: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 1) {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 1) > .stripe {
+    display: none;
+  }
+  body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 2) {
+    padding-top: 0;
+    padding-left: 10px;
+  }
+  body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 2) > .stripe {
+    display: none;
+  }
+  body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 3) {
+    padding-top: 0;
+    padding-right: 10px;
+  }
+  body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 4) {
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+}
+
+body.page-services main .container.prices-container .col {
+  padding-top: 0;
 }
 
 body.page-contact main section.contact {
