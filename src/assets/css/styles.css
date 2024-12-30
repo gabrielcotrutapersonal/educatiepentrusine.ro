@@ -168,10 +168,10 @@ a {
 
 a.link-with-icon {
   display: flex;
-  align-items: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
+  line-height: 22px;
   color: #5A2C3A;
   text-transform: uppercase;
   transition: all .2s ease-in-out;
@@ -195,6 +195,7 @@ a.link-with-icon .icon.default-link {
 
 a.link-with-icon .text {
   margin-left: 10px;
+  padding-top: 5px;
 }
 
 img {
@@ -633,6 +634,7 @@ body footer .content-container .col.left .content-box .contact-info-container {
 }
 
 body footer .content-container .col.left .content-box .contact-info-container .link-with-icon {
+  align-items: center;
   margin-top: 30px;
 }
 
@@ -652,6 +654,10 @@ body footer .content-container .col.left .content-box .contact-info-container .l
   min-width: 40px;
   height: 40px;
   background: url(../img/icon-facebook.svg) no-repeat center center;
+}
+
+body footer .content-container .col.left .content-box .contact-info-container .link-with-icon .text {
+  padding-top: 0;
 }
 
 body footer .content-container .col.right .content-box {
