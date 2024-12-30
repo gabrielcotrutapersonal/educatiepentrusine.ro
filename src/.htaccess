@@ -1,7 +1,18 @@
-
 RewriteEngine on
+
+# Redirect non-www to www
 RewriteCond %{HTTP_HOST} ^educatiepentrusine\.ro$
 RewriteRule ^/?$ "https\:\/\/www\.educatiepentrusine\.ro\/" [R=301,L]
+
+# Add trailing slash if missing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ /$1/ [R=301,L]
+
+# Generic rule to rewrite clean URLs with trailing slash to PHP files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/$ $1.php [L]
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # This domain inherits the “PHP” package.
