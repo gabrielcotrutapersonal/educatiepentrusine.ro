@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <section class="about">
                 <div class="container single photo-container">
                     <div class="col photo">
-                        <img alt="raluca-radu-psiholog-despre" src="assets/img/raluca-radu-psiholog-despre-mine.jpg" />
+                        <img alt="raluca-radu-psiholog-despre" src="/assets/img/raluca-radu-psiholog-despre-mine.jpg" />
                     </div>
                 </div>
                 <div class="container single about-container">

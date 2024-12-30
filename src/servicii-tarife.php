@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </div>
                     <div class="col right photo">
-                        <img alt="raluca-radu-psiholog-servicii-tarife" src="assets/img/raluca-radu-psiholog-servicii-tarife.jpg" />
+                        <img alt="raluca-radu-psiholog-servicii-tarife" src="/assets/img/raluca-radu-psiholog-servicii-tarife.jpg" />
                     </div>
                 </div>
             </section>

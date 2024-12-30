@@ -49,4 +49,4 @@
     </div>
 </footer>
 
-<script src="js/main.js?v=<?php echo getFileVersion(BASE_PATH . '/js/main.js'); ?>"></script>
+<script src="/js/main.js?v=<?php echo getFileVersion(BASE_PATH . '/js/main.js'); ?>"></script>

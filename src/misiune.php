@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </div>
                     <div class="col right photo">
-                        <img alt="raluca-radu-psiholog-misiune" src="assets/img/raluca-radu-psiholog-misiune.jpg" />
+                        <img alt="raluca-radu-psiholog-misiune" src="/assets/img/raluca-radu-psiholog-misiune.jpg" />
                     </div>
                 </div>
             </section>
