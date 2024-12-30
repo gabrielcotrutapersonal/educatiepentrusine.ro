@@ -43,12 +43,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="content-box">
                             <h2>Cine sunt eu?</h2>
                             <p>Sunt Raluca Radu, psiholog clinician și psihoterapeut, pasionată de a sprijini oamenii să depășească provocările vieții și să își regăsească echilibrul interior. Experiența mea combină cunoștințe din psihologie și business, într-un mod unic, adaptat fiecărui client.</p>
+                            <a class="link-with-icon" href="/despre/">
+                                <span class="icon default-link"></span>
+                                <span class="text">Află mai multe despre mine</span>
+                            </a>
                         </div>
                     </div>
                     <div class="col right">
                         <div class="content-box">
                             <h2>Descoperă-ți potențialul</h2>
                             <p>Crede în potențialul tău! Misiunea mea este să te sprijin să descoperi și să-ți valorifici resursele interioare, să depășești obstacolele și să-ți construiești o viață echilibrată, plină de sens, bazată pe autenticitate, încredere și dezvoltare continuă, aliniată cu valorile tale.</p>
+                            <a class="link-with-icon" href="/misiune/">
+                                <span class="icon default-link"></span>
+                                <span class="text">Descoperă viziunea mea</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -57,6 +65,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="content-box">
                             <h2>Terapie personalizată pentru tine</h2>
                             <p>Ședințe de psihoterapie individuală, la cabinet sau online, în funcție de nevoile și preferințele tale. Lucrăm împreună pe aspecte precum anxietatea, gestionarea conflictelor, stima de sine sau trauma de pierdere, într-un spațiu sigur și suportiv.</p>
+                            <a class="link-with-icon" href="/servicii-tarife/">
+                                <span class="icon default-link"></span>
+                                <span class="text">Vezi serviciile disponibile și tarifele</span>
+                            </a>
                         </div>
                     </div>
                 </div>

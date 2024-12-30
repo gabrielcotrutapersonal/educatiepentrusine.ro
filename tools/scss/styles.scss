@@ -159,6 +159,12 @@ a {
 
         .icon {
             opacity: .9;
+
+            &.default-link {
+                min-width: 30px;
+                height: 30px;
+                background: url(../img/icon-default-link.svg) no-repeat center center;
+            }
         }
 
         .text {

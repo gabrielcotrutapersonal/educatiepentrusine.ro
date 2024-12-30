@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 30 30">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #5a2c3a;
+      }
+    </style>
+  </defs>
+  <g id="Group_16">
+    <g id="Rectangle_17">
+      <rect class="st0" width="30" height="30"/>
+      <path class="st1" d="M30,30H0V0h30v30ZM2,28h26V2H2v26Z"/>
+    </g>
+    <polygon class="st1" points="19.2 15 17.8 13.6 12.2 7.9 10.8 9.3 16.4 15 10.8 20.7 12.2 22.1 17.8 16.4 17.8 16.4 19.2 15"/>
+  </g>
+</svg>
