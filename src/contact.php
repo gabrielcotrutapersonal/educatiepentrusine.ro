@@ -1,8 +1,8 @@
 <?php
 define('BASE_PATH', __DIR__);
 
-$pageTitle = "Raluca Radu | Misiune, viziune, valori | Educație pentru sine";
-$metaDescription = "Misiune, viziune și valori: dedicare, compasiune, educație continuă și creativitate pentru susținerea sănătății mintale și a echilibrului personal.";
+$pageTitle = "Raluca Radu | Contact | Educație pentru sine";
+$metaDescription = "Contactează-mă pentru a programa o ședință sau pentru mai multe informații despre serviciile oferite.";
 
 // Handle form submission if needed
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
