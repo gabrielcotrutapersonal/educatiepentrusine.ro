@@ -798,6 +798,12 @@ body.page-home header .content-container .col.right.content .content-box hr.hspa
 }
 
 @media (min-width: 320px) and (max-width: 899px) {
+  body.page-home main section .container .col {
+    padding-top: 35px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 899px) {
   body.page-mission header .content-container .col.content .content-box {
     margin-bottom: 0;
   }

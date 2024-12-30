@@ -755,6 +755,18 @@ body.page-home {
             }
         }
     }
+
+    main {
+        section {
+            .container {
+                .col {
+                    @include phone {
+                        padding-top: 35px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Misiune, viziune, valori
