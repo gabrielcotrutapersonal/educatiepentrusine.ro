@@ -76,7 +76,7 @@ h1,
     margin-bottom: 30px;
     @include main-font(35px, 700, 48px);
 
-    @include phone-portrait {
+    @include phone {
         @include main-font(35px, 700, 47px);
     }
 }
@@ -240,7 +240,7 @@ section {
     width: 1250px;
     max-width: 1250px;
 
-    @include phone-portrait {
+    @include phone {
         width: 100vw;
         max-width: 100vw;
     }
@@ -249,7 +249,7 @@ section {
         width: 100%;
         max-width: 100%;
 
-        @include phone-portrait {
+        @include phone {
             width: 100vw;
             max-width: 100vw;
         }
@@ -319,7 +319,7 @@ body {
                         margin-right: 0;
                     }
 
-                    @include phone-portrait {
+                    @include phone {
                         position: relative;
                         width: 100vw;
                         max-width: 100vw;
@@ -404,7 +404,7 @@ body {
                                 text-transform: uppercase;
                                 transition: opacity .2s ease-in-out;
 
-                                @include phone-portrait {
+                                @include phone {
                                     display: flex;
                                     align-items: center;
                                 }
@@ -498,7 +498,7 @@ body {
             display: flex;
             margin: 0 auto;
 
-            @include phone-portrait {
+            @include phone {
                 flex-wrap: wrap;
             }
 
@@ -538,7 +538,7 @@ body {
                 }
             }
 
-            @include phone-portrait {
+            @include phone {
                 &.single {
                     .col {
                         padding-top: 10px;
@@ -680,11 +680,6 @@ body.page-home {
             height: fit-content;
         }
 
-        @include phone-landscape {
-            justify-content: flex-start;
-            height: fit-content;
-        }
-
         .content-container {
             @extend %header-footer-col-model;
 
@@ -695,11 +690,16 @@ body.page-home {
                         background: url(../img/raluca-radu-psiholog-psihoterapeut.jpg) no-repeat bottom -25px right -25px;
                         overflow: visible;
 
-                        @include phone-portrait {
+                        @include phone {
                             margin-top: -140px;
                             height: 540px;
                             background-position: bottom center;
                             background-size: cover;
+                        }
+
+                        @include phone-landscape {
+                            margin-top: 0;
+                            height: 630px;
                         }
 
                         .stripe {
@@ -735,7 +735,6 @@ body.page-home {
                                 }
                             }
 
-
                             hr.hspacer {
                                 margin: 15px -60px 15px 0;
                                 border-color: $header-spacer-color;
@@ -765,7 +764,7 @@ body.page-mission {
 
                         h1 {
                             &.text-align-center {
-                                @include phone-portrait {
+                                @include phone {
                                     margin-bottom: 0;
                                 }
                             }
@@ -785,7 +784,7 @@ body.page-mission {
 
         .container {
             &.mission-container {
-                @include phone-portrait {
+                @include phone {
                     flex-direction: column-reverse;
                 }
 
@@ -800,6 +799,12 @@ body.page-mission {
                                 max-height: 340px;
                                 overflow: hidden;
                             }
+
+                            @include phone-landscape {
+                                display: flex;
+                                justify-content: center;
+                                padding-top: 20px;
+                            }
                         }
                     }
                 }
@@ -808,7 +813,7 @@ body.page-mission {
             &.vision-container {
                 flex-direction: column;
 
-                @include phone-portrait {
+                @include phone {
                     flex-wrap: wrap;
                 }
 
@@ -817,7 +822,7 @@ body.page-mission {
                         flex: 1;
                         padding-top: 0;
 
-                        @include phone-portrait {
+                        @include phone {
                             min-width: 100vw;
                         }
 
@@ -825,7 +830,7 @@ body.page-mission {
                             margin-top: 10px;
                             margin-bottom: 30px;
 
-                            @include phone-portrait {
+                            @include phone {
                                 margin-left: 20px;
                             }
                         }
@@ -833,7 +838,7 @@ body.page-mission {
                         &.left {
                             padding-right: 10px;
 
-                            @include phone-portrait {
+                            @include phone {
                                 padding-right: 0;
                             }
                         }
@@ -842,7 +847,7 @@ body.page-mission {
                             padding-left: 10px;
                             padding-right: 10px;
 
-                            @include phone-portrait {
+                            @include phone {
                                 padding-right: 0;
                                 padding-left: 0;
                             }
@@ -851,7 +856,7 @@ body.page-mission {
                         &.right {
                             padding-left: 10px;
 
-                            @include phone-portrait {
+                            @include phone {
                                 padding-left: 0;
                             }
                         }
@@ -873,7 +878,7 @@ body.page-mission {
                     &.left {
                         .content-box {
                             ul {
-                                @include phone-portrait {
+                                @include phone {
                                     margin-bottom: 0;
                                 }
                             }
@@ -883,7 +888,7 @@ body.page-mission {
                     &.right {
                         .content-box {
                             ul {
-                                @include phone-portrait {
+                                @include phone {
                                     margin-top: 0;
                                 }
                             }
@@ -908,7 +913,7 @@ body.page-about {
 
                         h1 {
                             &.text-align-center {
-                                @include phone-portrait {
+                                @include phone {
                                     margin-bottom: 0;
                                 }
                             }
@@ -929,7 +934,7 @@ body.page-about {
                         &.photo {
                             padding-top: 0;
 
-                            @include phone-portrait {
+                            @include phone {
                                 display: flex;
                                 justify-content: center;
                                 overflow: hidden;
@@ -963,7 +968,7 @@ body.page-about {
                 }
 
                 &.about-more-container {
-                    @include phone-portrait {
+                    @include phone {
                         flex-direction: column;
                     }
 
@@ -1095,7 +1100,7 @@ body.page-services {
 
                         h1 {
                             &.text-align-center {
-                                @include phone-portrait {
+                                @include phone {
                                     margin-bottom: 0;
                                 }
                             }
@@ -1115,15 +1120,21 @@ body.page-services {
 
         .container {
             &.services-container {
-                @include phone-portrait {
+                @include phone {
                     flex-direction: column-reverse;
                 }
 
                 .col {
                     &.right {
                         &.photo {
-                            @include phone {
+                            @include phone-portrait {
                                 padding-top: 0;
+                            }
+
+                            @include phone-landscape {
+                                display: flex;
+                                justify-content: center;
+                                padding-top: 20px;
                             }
                         }
                     }
@@ -1189,7 +1200,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1199,7 +1210,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1209,7 +1220,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1219,7 +1230,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1229,7 +1240,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1239,7 +1250,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1249,7 +1260,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1259,7 +1270,7 @@ body.page-services {
                                 .content-box {
                                     width: 220px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1269,7 +1280,7 @@ body.page-services {
                                 .content-box {
                                     width: 230px;
 
-                                    @include phone-portrait {
+                                    @include phone {
                                         width: 100%;
                                     }
                                 }
@@ -1286,8 +1297,14 @@ body.page-services {
                         }
 
                         @include phone {
+                            .box {
+                                .content-box {
+                                    padding: 20px;
+                                }
+                            }
+
                             &:nth-of-type(4n + 1) {
-                                padding-left: 20px;
+                                padding-left: 0;
                                 padding-right: 10px;
 
                                 & > .stripe {
@@ -1296,8 +1313,8 @@ body.page-services {
                             }
 
                             &:nth-of-type(4n + 2) {
-                                padding-top: 0;
                                 padding-left: 10px;
+                                padding-right: 0;
 
                                 & > .stripe {
                                     display: none;
@@ -1306,12 +1323,13 @@ body.page-services {
 
                             &:nth-of-type(4n + 3) {
                                 padding-top: 0;
+                                padding-left: 0;
                                 padding-right: 10px;
                             }
 
                             &:nth-of-type(4n + 4) {
                                 padding-left: 10px;
-                                padding-right: 20px;
+                                padding-right: 0;
                             }
                         }
                     }
@@ -1339,7 +1357,7 @@ body.page-contact {
                 background: url(../img/map.jpg) no-repeat top -50px center;
                 background-size: cover;
 
-                @include phone-portrait {
+                @include phone {
                     background-position: top center;
                     min-height: 400px;
                 }
@@ -1356,7 +1374,7 @@ body.page-contact {
                         margin-bottom: 0;
                     }
 
-                    @include phone-portrait {
+                    @include phone {
                         padding-top: 0;
                         padding-bottom: 0;
                     }
