@@ -26,15 +26,15 @@
                 <form id="contactForm" data-role="contact-form">
                     <div class="row">
                         <label for="name">Nume</label>
-                        <input type="text" id="name" name="name" required />
+                        <input type="text" id="name" name="name" autocomplete="name" required />
                     </div>
                     <div class="row">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required />
+                        <input type="email" id="email" name="email" autocomplete="email" required />
                     </div>
                     <div class="row">
                         <label for="tel">Telefon</label>
-                        <input type="tel" id="tel" name="tel" />
+                        <input type="tel" id="tel" name="tel" autocomplete="tel" />
                     </div>
                     <div class="row">
                         <label for="message">Mesaj</label>
