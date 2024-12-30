@@ -37,7 +37,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         $.ajax({
-            url: "index.php",
+            url: "/includes/handle-form-submission.php",
             type: "POST",
             data: $contactForm.serialize(),
             success: function (response) {

@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('BASE_PATH')) {
+    define('BASE_PATH', dirname(__DIR__));
+}
+
 require BASE_PATH . '/vendor/autoload.php';
 
 use App\Config;
@@ -10,21 +14,28 @@ use PHPMailer\PHPMailer\Exception;
 function handleFormSubmission()
 {
     try {
+        error_log('Debug: Entered handleFormSubmission function.');
+
         $conn = Database::getConnection();
+        error_log('Debug: Database connection established.');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = htmlspecialchars($_POST['name']);
-            $email = htmlspecialchars($_POST['email']);
-            $message = htmlspecialchars($_POST['message']);
+            // Sanitize and validate inputs
+            $name = htmlspecialchars($_POST['name'] ?? '');
+            $email = htmlspecialchars($_POST['email'] ?? '');
+            $message = htmlspecialchars($_POST['message'] ?? '');
             $phone = htmlspecialchars($_POST['tel'] ?? '');
 
-            // Validate input data
+            error_log("Debug: Form Data - Name: $name, Email: $email, Phone: $phone, Message: $message");
+
+            // Validate required fields
             if (empty($name) || empty($email) || empty($message)) {
+                error_log('Debug: Validation failed - Missing required fields.');
                 echo json_encode(['success' => false, 'message' => 'Toate câmpurile sunt obligatorii.']);
                 exit;
             }
 
-            // Save to the database
+            // Save to database
             $stmt = $conn->prepare("INSERT INTO contact_form_submissions (name, email, message) VALUES (?, ?, ?)");
             if (!$stmt) {
                 error_log('SQL Error (prepare): ' . $conn->error);
@@ -38,6 +49,7 @@ function handleFormSubmission()
                 echo json_encode(['success' => false, 'message' => 'A apărut o eroare la salvarea mesajului.']);
                 exit;
             }
+            error_log('Debug: Data successfully saved to database.');
 
             // Send the email
             $mail = new PHPMailer(true);
@@ -70,6 +82,7 @@ function handleFormSubmission()
                 ";
 
                 $mail->send();
+                error_log('Debug: Email successfully sent.');
             } catch (Exception $e) {
                 error_log('Email Error: ' . $mail->ErrorInfo);
                 echo json_encode(['success' => false, 'message' => 'Mesajul nu a fost trimis: ' . $mail->ErrorInfo]);
@@ -83,5 +96,6 @@ function handleFormSubmission()
         error_log('General Error: ' . $e->getMessage());
         echo json_encode(['success' => false, 'message' => $e->getMessage()]);
         exit;
-    }
-}
+    }}
+
+handleFormSubmission();
