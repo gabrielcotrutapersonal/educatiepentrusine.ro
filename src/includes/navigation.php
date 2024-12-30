@@ -16,6 +16,7 @@
                     </a>
                 </li>
                 <li><a href="/misiune.php">Misiune, viziune, valori</a></li>
+                <li><a href="/despre.php">Despre mine</a></li>
                 <li><a href="/servicii-tarife.php">Servicii și tarife</a></li>
                 <li><a href="/contact.php">Contact</a></li>
             </ul>

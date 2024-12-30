@@ -106,6 +106,15 @@ h2 {
   line-height: 40px;
 }
 
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: 'Merriweather', serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 35px;
+}
+
 p,
 .p {
   margin-top: 0;
@@ -180,6 +189,10 @@ a.link-with-icon .icon {
 
 a.link-with-icon .text {
   margin-left: 10px;
+}
+
+img {
+  max-width: 100vw;
 }
 
 input[type=text],
@@ -321,11 +334,12 @@ body header .menu-container {
   padding-top: 20px;
   background-color: #615D52;
   transition: all .2s ease-in-out;
+  z-index: 2;
 }
 
 body header .menu-container .menu-bar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 1250px;
   max-width: 1250px;
@@ -335,14 +349,15 @@ body header .menu-container .menu-bar {
   body header .menu-container .menu-bar {
     width: 100vw;
     max-width: 100vw;
+    padding-bottom: 20px;
   }
 }
 
 body header .menu-container .menu-bar .logo {
   flex: 1;
-  max-width: 520px;
+  max-width: 360px;
   height: 163px;
-  margin-right: 25px;
+  margin-right: 15px;
   background: url(../img/logo.svg) no-repeat center center;
   transition: all .3s ease-in-out;
 }
@@ -356,7 +371,8 @@ body header .menu-container .menu-bar .logo {
 @media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body header .menu-container .menu-bar .logo {
     position: relative;
-    width: 300px;
+    width: 100vw;
+    max-width: 100vw;
     height: 136px;
     z-index: 1;
   }
@@ -364,18 +380,16 @@ body header .menu-container .menu-bar .logo {
 
 body header .menu-container .menu-bar nav.main-nav {
   position: static;
-  flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-left: 25px;
-  padding-right: 60px;
+  margin-left: 40px;
   z-index: 2;
 }
 
 @media (min-width: 320px) and (max-width: 599px) {
   body header .menu-container .menu-bar nav.main-nav {
-    position: fixed;
+    position: absolute;
     top: 35px;
     right: 35px;
     flex-direction: column;
@@ -439,6 +453,19 @@ body header .menu-container .menu-bar nav.main-nav ul.menu li a {
   color: #fff;
   text-transform: uppercase;
   transition: opacity .2s ease-in-out;
+}
+
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
+  body header .menu-container .menu-bar nav.main-nav ul.menu li a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+body header .menu-container .menu-bar nav.main-nav ul.menu li a.but-home {
+  display: inline-flex;
+  margin: 0 -10px;
+  padding: 0 10px;
 }
 
 body header .menu-container .menu-bar nav.main-nav ul.menu li a.but-home svg {
@@ -686,17 +713,19 @@ body.is-scrolled header .menu-container {
   background-color: #615D52;
 }
 
-body.is-scrolled header .menu-container .menu-bar nav.main-nav ul.menu {
-  margin-top: 30px;
-}
-
 body.page-home header {
   height: 750px;
 }
 
 @media (min-width: 320px) and (max-width: 599px) {
   body.page-home header {
-    padding-top: 20px;
+    justify-content: flex-start;
+    height: fit-content;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 898px) and (orientation: landscape) {
+  body.page-home header {
     justify-content: flex-start;
     height: fit-content;
   }
@@ -710,7 +739,7 @@ body.page-home header .content-container .col.left.photo {
 
 @media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-home header .content-container .col.left.photo {
-    margin-top: -160px;
+    margin-top: -140px;
     height: 540px;
     background-position: bottom center;
     background-size: cover;
@@ -758,13 +787,7 @@ body.page-home header .content-container .col.right.content .content-box hr.hspa
 
 @media (min-width: 320px) and (max-width: 599px) {
   body.page-home header .content-container .col.right.content .content-box hr.hspacer {
-    margin-right: -30px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  body.page-mission header .content-container {
-    padding-top: 30px;
+    margin-right: -20px;
   }
 }
 
@@ -777,7 +800,6 @@ body.page-home header .content-container .col.right.content .content-box hr.hspa
 @media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission header .content-container .col.content .content-box h1.text-align-center {
     margin-bottom: 0;
-    text-align: left;
   }
 }
 
@@ -803,12 +825,6 @@ body.page-home header .content-container .col.right.content .content-box hr.hspa
   body.page-mission main .container.mission-container .col.right.photo {
     max-height: 340px;
     overflow: hidden;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
-  body.page-mission main .container.mission-container .col.right.photo img {
-    width: 100vw;
   }
 }
 
