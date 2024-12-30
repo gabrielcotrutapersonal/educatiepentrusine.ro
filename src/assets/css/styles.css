@@ -9,7 +9,7 @@ body footer .content-container, body.page-home header .content-container {
   width: 100%;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container, body.page-home header .content-container {
     width: 100vw;
   }
@@ -20,7 +20,7 @@ body footer .content-container .col, body.page-home header .content-container .c
   display: flex;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container .col, body.page-home header .content-container .col {
     min-width: 100%;
   }
@@ -30,7 +30,7 @@ body footer .content-container .col .content-box, body.page-home header .content
   width: 600px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container .col .content-box, body.page-home header .content-container .col .content-box {
     width: 100vw;
   }
@@ -41,7 +41,7 @@ body footer .content-container .col.left, body.page-home header .content-contain
   padding-right: 25px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container .col.left, body.page-home header .content-container .col.left {
     padding-right: 0;
   }
@@ -51,7 +51,7 @@ body footer .content-container .col.right, body.page-home header .content-contai
   margin-left: 25px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container .col.right, body.page-home header .content-container .col.right {
     margin-left: 0;
   }
@@ -87,7 +87,7 @@ h1,
   line-height: 48px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   h1,
   .h1 {
     font-family: 'Merriweather', serif;
@@ -234,7 +234,7 @@ button {
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   .no-phone-portrait {
     display: none;
   }
@@ -245,7 +245,7 @@ section {
   padding-bottom: calc(40px + 40px);
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   section {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -261,7 +261,7 @@ section.background-alternative {
   max-width: 1250px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   .container {
     width: 100vw;
     max-width: 100vw;
@@ -273,7 +273,7 @@ section.background-alternative {
   max-width: 100%;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   .container.full-width {
     width: 100vw;
     max-width: 100vw;
@@ -331,7 +331,7 @@ body header .menu-container .menu-bar {
   max-width: 1250px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body header .menu-container .menu-bar {
     width: 100vw;
     max-width: 100vw;
@@ -347,13 +347,13 @@ body header .menu-container .menu-bar .logo {
   transition: all .3s ease-in-out;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body header .menu-container .menu-bar .logo {
     margin-right: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body header .menu-container .menu-bar .logo {
     position: relative;
     width: 300px;
@@ -373,7 +373,7 @@ body header .menu-container .menu-bar nav.main-nav {
   z-index: 2;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body header .menu-container .menu-bar nav.main-nav {
     position: fixed;
     top: 35px;
@@ -391,7 +391,7 @@ body header .menu-container .menu-bar nav.main-nav .burger-menu {
   z-index: 2;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) {
   body header .menu-container .menu-bar nav.main-nav .burger-menu {
     display: flex;
     flex-direction: column;
@@ -455,7 +455,7 @@ body header .menu-container .menu-bar nav.main-nav ul.menu li a.but-home svg {
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) {
   body header .menu-container .menu-bar nav.main-nav ul.menu {
     display: none;
   }
@@ -491,7 +491,7 @@ body header .content-container .col.content {
   padding-top: 39px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body header .content-container .col.content {
     padding-top: 0;
   }
@@ -503,7 +503,7 @@ body header .content-container .col.content .content-box {
   background-color: rgba(163, 184, 180, 0.6);
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body header .content-container .col.content .content-box {
     padding: 20px;
   }
@@ -518,7 +518,7 @@ body main .container {
   margin: 0 auto;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body main .container {
     flex-wrap: wrap;
   }
@@ -528,7 +528,7 @@ body main .container .col {
   padding-top: 40px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body main .container .col {
     width: 100vw;
     padding-top: 30px;
@@ -540,7 +540,7 @@ body main .container .col .content-box {
   padding-right: 60px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body main .container .col .content-box {
     padding-left: 20px;
     padding-right: 20px;
@@ -551,7 +551,7 @@ body main .container .col.left {
   padding-right: 25px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body main .container .col.left {
     padding-right: 0;
   }
@@ -561,14 +561,14 @@ body main .container .col.right {
   padding-left: 25px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body main .container .col.right {
     padding-left: 0;
     padding-top: 10px;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body main .container.single .col {
     padding-top: 10px;
   }
@@ -582,7 +582,7 @@ body footer .content-container .col .content-box {
   padding: 60px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container .col .content-box {
     padding: 30px 20px;
   }
@@ -627,7 +627,7 @@ body footer .content-container .col.right .content-box {
   background-color: #D2B48C;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container .col.right .content-box {
     margin-top: 0;
   }
@@ -646,7 +646,7 @@ body footer .content-container .col.right .content-box .form-message {
   text-align: center;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body footer .content-container .col.right .content-box .form-message {
     margin-left: -20px;
     margin-right: -20px;
@@ -694,7 +694,7 @@ body.page-home header {
   height: 750px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-home header {
     padding-top: 20px;
     justify-content: flex-start;
@@ -708,7 +708,7 @@ body.page-home header .content-container .col.left.photo {
   overflow: visible;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-home header .content-container .col.left.photo {
     margin-top: -160px;
     height: 540px;
@@ -723,7 +723,7 @@ body.page-home header .content-container .col.left.photo .stripe {
   width: 600px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-home header .content-container .col.left.photo .stripe {
     margin-right: 0;
     margin-left: 20px;
@@ -736,7 +736,7 @@ body.page-home header .content-container .col.right.content .content-box {
   height: 560px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-home header .content-container .col.right.content .content-box {
     padding-bottom: 40px;
     height: fit-content;
@@ -756,7 +756,7 @@ body.page-home header .content-container .col.right.content .content-box hr.hspa
   border-color: rgba(241, 232, 221, 0.3);
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-home header .content-container .col.right.content .content-box hr.hspacer {
     margin-right: -30px;
   }
@@ -768,38 +768,38 @@ body.page-home header .content-container .col.right.content .content-box hr.hspa
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-mission header .content-container .col.content .content-box {
     margin-bottom: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission header .content-container .col.content .content-box h1.text-align-center {
     margin-bottom: 0;
     text-align: left;
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-mission main section.mission {
     padding-top: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.mission-container {
     flex-direction: column-reverse;
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-mission main .container.mission-container .col.right.photo {
     padding-top: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.mission-container .col.right.photo {
     max-height: 340px;
     overflow: hidden;
@@ -816,7 +816,7 @@ body.page-mission main .container.vision-container {
   flex-direction: column;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.vision-container {
     flex-wrap: wrap;
   }
@@ -827,7 +827,7 @@ body.page-mission main .container.vision-container .container .col {
   padding-top: 0;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.vision-container .container .col {
     min-width: 100vw;
   }
@@ -838,7 +838,7 @@ body.page-mission main .container.vision-container .container .col .stripe {
   margin-bottom: 30px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.vision-container .container .col .stripe {
     margin-left: 20px;
   }
@@ -848,7 +848,7 @@ body.page-mission main .container.vision-container .container .col.left {
   padding-right: 10px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.vision-container .container .col.left {
     padding-right: 0;
   }
@@ -859,7 +859,7 @@ body.page-mission main .container.vision-container .container .col.middle {
   padding-right: 10px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.vision-container .container .col.middle {
     padding-right: 0;
     padding-left: 0;
@@ -870,7 +870,7 @@ body.page-mission main .container.vision-container .container .col.right {
   padding-left: 10px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.vision-container .container .col.right {
     padding-left: 0;
   }
@@ -885,58 +885,194 @@ body.page-mission main .container.values-container .col {
   padding-top: 0;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.values-container .col.left .content-box ul {
     margin-bottom: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-mission main .container.values-container .col.right .content-box ul {
     margin-top: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
-  body.page-services header .content-container {
-    padding-top: 30px;
+@media (min-width: 320px) and (max-width: 599px) {
+  body.page-about header .content-container .col.content .content-box {
+    margin-bottom: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
+  body.page-about header .content-container .col.content .content-box h1.text-align-center {
+    margin-bottom: 0;
+  }
+}
+
+body.page-about main section.about {
+  padding-top: 0;
+}
+
+body.page-about main section.about .container.photo-container .col.photo {
+  padding-top: 0;
+}
+
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
+  body.page-about main section.about .container.photo-container .col.photo {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  body.page-about main section.about .container.photo-container .col.photo img {
+    width: calc(100vw + 60px);
+    max-width: calc(100vw + 60px);
+  }
+}
+
+body.page-about main section.about .container.about-container .col.content {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  body.page-about main section.about .container.about-container .col.content {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-about main section.about .container.about-container .col.content h3 {
+  margin-bottom: 0;
+}
+
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
+  body.page-about main section.about .container.about-more-container {
+    flex-direction: column;
+  }
+}
+
+body.page-about main section.about .container.about-more-container .col {
+  flex: 1;
+}
+
+body.page-about main section.about .container.help-container .col.content {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  body.page-about main section.about .container.help-container .col.content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-about main section.approach .container.approach-intro-container {
+  flex-direction: column;
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  body.page-about main section.approach .container.approach-intro-container h2 {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-about main section.approach .container.approach-intro-container .col {
+  padding-top: 10px;
+}
+
+body.page-about main section.approach .container.approach-intro-container .col p {
+  margin-bottom: 0;
+}
+
+body.page-about main section.approach .container.approach-container .col {
+  flex: 1;
+}
+
+body.page-about main section.approach .container.approach-container .col .stripe {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  body.page-about main section.approach .container.approach-container .col .stripe {
+    margin-right: 0;
+    margin-left: 20px;
+    width: calc(100vw - 20px);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  body.page-about main section.approach .container.approach-container .col.right {
+    padding-top: 0;
+  }
+  body.page-about main section.approach .container.approach-container .col.right .stripe {
+    display: none;
+  }
+  body.page-about main section.approach .container.approach-container .col.right .content-box ul {
+    margin-top: 0;
+  }
+}
+
+body.page-about main section.approach .container.approach-container .col .content-box {
+  padding-right: 50px;
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  body.page-about main section.certifications h2 {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-about main section.certifications .container.certifications-container {
+  margin-bottom: 40px;
+}
+
+body.page-about main section.certifications .container.certifications-container .col {
+  flex: 1;
+  padding-top: 0;
+}
+
+body.page-about main section.certifications .container.certifications-container .col .content-box {
+  padding-right: 50px;
+}
+
+body.page-about main section.certifications .container.formations-container .col {
+  flex: 1;
+  padding-top: 0;
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-services header .content-container .col.content .content-box {
     margin-bottom: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services header .content-container .col.content .content-box h1.text-align-center {
     margin-bottom: 0;
-    text-align: left;
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-services main section.services {
     padding-top: 0;
   }
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.services-container {
     flex-direction: column-reverse;
   }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-services main .container.services-container .col.right.photo {
     padding-top: 0;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
-  body.page-services main .container.services-container .col.right.photo img {
-    width: 100vw;
   }
 }
 
@@ -949,14 +1085,14 @@ body.page-services main .container.work-areas-container .container {
   flex-wrap: wrap;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-services main .container.work-areas-container .container {
     width: 100vw;
     min-width: 100vw;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1249px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   body.page-services main .container.work-areas-container .container {
     width: 100vw;
     min-width: 100vw;
@@ -973,7 +1109,7 @@ body.page-services main .container.work-areas-container .container .col {
   padding: 10px 20px 0;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-services main .container.work-areas-container .container .col {
     min-width: 50%;
     max-width: 50%;
@@ -1009,7 +1145,7 @@ body.page-services main .container.work-areas-container .container .col .box.anx
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.anxiety .content-box {
     width: 100%;
   }
@@ -1019,7 +1155,7 @@ body.page-services main .container.work-areas-container .container .col .box.rel
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.relationships .content-box {
     width: 100%;
   }
@@ -1029,7 +1165,7 @@ body.page-services main .container.work-areas-container .container .col .box.lon
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.loneliness .content-box {
     width: 100%;
   }
@@ -1039,7 +1175,7 @@ body.page-services main .container.work-areas-container .container .col .box.mot
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.motivation .content-box {
     width: 100%;
   }
@@ -1049,7 +1185,7 @@ body.page-services main .container.work-areas-container .container .col .box.sel
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.self-esteem .content-box {
     width: 100%;
   }
@@ -1059,7 +1195,7 @@ body.page-services main .container.work-areas-container .container .col .box.pts
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.ptsd .content-box {
     width: 100%;
   }
@@ -1069,7 +1205,7 @@ body.page-services main .container.work-areas-container .container .col .box.sle
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.sleep .content-box {
     width: 100%;
   }
@@ -1079,7 +1215,7 @@ body.page-services main .container.work-areas-container .container .col .box.los
   width: 220px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.loss .content-box {
     width: 100%;
   }
@@ -1089,7 +1225,7 @@ body.page-services main .container.work-areas-container .container .col .box.bal
   width: 230px;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-services main .container.work-areas-container .container .col .box.balance .content-box {
     width: 100%;
   }
@@ -1104,7 +1240,7 @@ body.page-services main .container.work-areas-container .container .col:nth-of-t
   padding-right: 0;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 599px) {
   body.page-services main .container.work-areas-container .container .col:nth-of-type(4n + 1) {
     padding-left: 20px;
     padding-right: 10px;
@@ -1144,7 +1280,7 @@ body.page-contact main section.contact .container {
   background-size: cover;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-contact main section.contact .container {
     background-position: top center;
     min-height: 400px;
@@ -1164,7 +1300,7 @@ body.page-contact main section.contact .container .col p {
   margin-bottom: 0;
 }
 
-@media (min-width: 320px) and (max-width: 567px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 599px) and (orientation: portrait) {
   body.page-contact main section.contact .container .col {
     padding-top: 0;
     padding-bottom: 0;
